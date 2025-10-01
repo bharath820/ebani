@@ -1,0 +1,785 @@
+/* Container Layout */
+.doctorContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+}
+
+/* Doctor Image Section */
+.doctorImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.doctorImage {
+  align-self: center;
+  object-fit: contain;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Details and Booking */
+.details-bookingContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Doctor Details */
+.detailsContainer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.docName {
+  font-size: 1.6rem !important;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.department,
+.specialization,
+.experience {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.aboutDoctor {
+  margin-top: 1rem;
+}
+
+.about {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #3f51b5;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Book Button */
+.booknowBtn {
+  background-color: #1976d2;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: 0.3s ease;
+}
+
+.booknowBtn:hover {
+  background-color: #303f9f;
+}
+
+/* Booking Container */
+.bookingContainer {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.slots {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #5c6bc0;
+}
+
+/* Date Scroll */
+.date-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.date-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem;
+  min-width: 80px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  scroll-snap-align: start;
+  color: #1976d2;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.date-item:hover,
+.date-item.selected {
+  border-bottom: 3px solid #1976d2;
+  background-color: #e6ffe6;
+}
+
+.date-top {
+  font-size: 1rem;
+}
+
+.date-bottom {
+  font-size: 0.9rem;
+}
+
+/* Time Slots */
+.time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.time-slot {
+  padding: 0.5rem 1rem;
+  border: 1px solid #5c6bc0;
+  border-radius: 20px;
+  background-color: white;
+  color: #303f9f;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+
+.time-slot.active {
+  background-color: #a5b1f3;
+  border-color: #3f51b5;
+  color: #1a237e;
+}
+
+.time-slot.disabled {
+  background-color: white;
+  border-color: #5c6bc0;
+  color: #babdd3;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalcontent {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.closebutton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Modal Form */
+.patientsubmitForm {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.formgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formgroup label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.formgroup input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.appointmentBtn {
+  background-color: #1976d2;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.appointmentBtn:hover {
+  background-color: #1976d2;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .doctorContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doctorImage {
+    max-width: 300px;
+  }
+
+  .details-bookingContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctorContainer {
+    padding: 1rem;
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .date-item {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .time-slot {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .modalcontent {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctorImage {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .detailsContainer, .bookingContainer {
+    padding: 1rem;
+  }
+
+  .booknowBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .modalcontent {
+    width: 95%;
+  }
+}
+
+/* Container that wraps the entire form */
+.formGrid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Left side: personal details */
+.formGrid .form-fields {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Right side: payment section */
+.formGrid .payment-section {
+  flex: 1;
+  min-width: 280px;
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* Form fields layout in row */
+.form-fields .formgroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-fields .formgroup label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-fields .formgroup input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.card-element {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.payment-summary p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.payment-amount {
+  font-weight: bold;
+  color: #1e90ff;
+}
+
+.appointmentBtn {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.appointmentBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Small Mobiles (<= 480px) ---------- */
+@media screen and (max-width: 480px) {
+  .modalcontent {
+    width: 95%;
+    padding: 1rem;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .closebutton {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .patientsubmitForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .formgroup label {
+    font-size: 0.95rem;
+  }
+
+  .formgroup input {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .appointmentBtn {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .payment-section h4 {
+    font-size: 1rem;
+  }
+
+  .payment-summary p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- Mobiles & Small Tablets (481px - 768px) ---------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .modalcontent {
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .patientsubmitForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .formgroup input {
+    font-size: 1rem;
+  }
+
+  .appointmentBtn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .payment-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .payment-summary p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Laptops (769px - 1024px) ---------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .modalcontent {
+    width: 80%;
+    padding: 2rem;
+  }
+
+  .patientsubmitForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .formgroup {
+    flex: 1;
+  }
+
+  .formgroup input {
+    font-size: 1rem;
+  }
+
+  .appointmentBtn {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Desktops (>= 1025px) ---------- */
+@media screen and (min-width: 1025px) {
+  .modalcontent {
+    width: 600px;
+    padding: 2rem;
+  }
+
+  .patientsubmitForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .formgroup input {
+    font-size: 1rem;
+  }
+
+  .appointmentBtn {
+    font-size: 1.05rem;
+    padding: 0.9rem;
+  }
+}
+
+/* Split Layout Styles */
+.modalcontent {
+  max-width: 900px;
+  width: 90%;
+}
+
+.split-layout-form {
+  display: flex;
+  gap: 30px;
+}
+
+.appointment-details {
+  flex: 1;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.payment-details {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Appointment Details Styles */
+.doctor-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.doctor-image-container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.doctor-info h4 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+}
+
+.doctor-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.appointment-info {
+  margin: 20px 0;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+}
+
+.value {
+  color: #2c3e50;
+}
+
+.patient-form {
+  margin-top: 20px;
+}
+
+/* Payment Details Styles */
+.stripe-card-element {
+  margin: 20px 0;
+}
+
+.stripe-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.stripe-field {
+  flex: 1;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.stripe-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.full-width {
+  flex: 1 0 100%;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.StripeElement {
+  padding: 10px 12px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.payment-summary {
+  margin: 25px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.payment-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.payment-btn:hover {
+  background: #45a049;
+}
+
+.payment-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .split-layout-form {
+    flex-direction: column;
+  }
+  
+  .appointment-details,
+  .payment-details {
+    width: 100%;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modalcontent {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-height: 85vh; /* Reduced height */
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollable-modal {
+  overflow: hidden; /* Container doesn't scroll */
+  max-width: 900px;
+  width: 90%;
+}
+
+.split-layout-form {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.appointment-details,
+.payment-details {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Each section scrolls independently */
+  max-height: 75vh; /* Adjust based on your needs */
+}
+
+.scrollable-section {
+  overflow-y: auto;
+  padding-right: 10px; /* Prevent content from touching scrollbar */
+}
+
+/* Custom scrollbar */
+.scrollable-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .split-layout-form {
+    flex-direction: column;
+  }
+  
+  .appointment-details,
+  .payment-details {
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  .modalcontent {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
